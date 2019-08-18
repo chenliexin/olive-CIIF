@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> OMRON 智能制造现场管理平台</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/echarts.min.js"></script>
+  <script src="./js/lottie.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrap-head clearfix">
+      <div class="head-left">
+        <img class="head-left-logo" src="./img/logo1.png">
+        <span class="head-left-title">智能制造现场管理平台</span>
+      </div>
+      <div class="head-right clearfix">
+        <dl class="head-date">
+          <dt id="strDay"></dt>
+          <dd id="strDate"></dd>
+        </dl>
+        <div class="head-time">
+          <span id="strHour"></span>
+          <i>:</i>
+          <span id="strMinute"></span>
+          <i>:</i>
+          <span id="strSecond"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap-body clearfix">
+      <div class="wrap-body-col clearfix">
+        <div class="wrap-body-top">
+          <div class="box-title">
+            <h3>综合稼动率分析</h3>
+            <div class="box-title-more"></div>
+          </div>
+          <div class="box-body clearfix">
+            <div class="ctx ctx1-1">
+              <div class="gauge gauge1">
+                <div class="gauge-point" style="transform: rotate(-48.4deg);"></div>
+                <div class="gauge-title">OEE</div>
+                <div class="gauge-value">33.2
+                  <i>%</i>
+                </div>
+              </div>
+            </div>
+            <div class="ctx ctx1-2">
+              <div class="gauge gauge2">
+                <!-- 0刻度-148deg 100刻度152deg 共300deg即每个百分点为3deg -->
+                <div class="gauge-point" style="transform: rotate(71deg);"></div>
+                <div class="gauge-title">时间稼动率</div>
+                <div class="gauge-value">73
+                  <i>%</i>
+                </div>
+              </div>
+              <div class="gauge gauge3">
+                <div class="gauge-point" style="transform: rotate(137deg);"></div>
+                <div class="gauge-title">性能稼动率</div>
+                <div class="gauge-value">95
+                  <i>%</i>
+                </div>
+              </div>
+              <div class="gauge gauge4">
+                <div class="gauge-point" style="transform: rotate(137deg);"></div>
+                <div class="gauge-title">良品率</div>
+                <div class="gauge-value">95
+                  <i>%</i>
+                </div>
+              </div>
+            </div>
+            <div class="ctx ctx1-3">
+              <div class="analyze analyze1">
+                <div class="analyze1-count">
+                  <ul>
+                    <li>
+                      <span class="icon-time1"></span>
+                      <span class="name">总时间</span>
+                      <span class="time">12:23:34</span>
+                    </li>
+                    <li>
+                      <span class="icon-time2"></span>
+                      <span class="name">运行时间</span>
+                      <span class="time">12:23:34</span>
+                    </li>
+                    <li>
+                      <span class="icon-time3"></span>
+                      <span class="name">停机时间</span>
+                      <span class="time">12:23:34</span>
+                    </li>
+                    <li>
+                      <span class="icon-time4"></span>
+                      <span class="name">报警时间</span>
+                      <span class="time">12:23:34</span>
+                    </li>
+                    <li>
+                      <span class="icon-time5"></span>
+                      <span class="name">维护时间</span>
+                      <span class="time">12:23:34</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="analyze1-comp">
+                  <div id="comp1" style="width: 132px;height: 132px;"></div>
+                </div>
+                <div class="analyze1-comp">
+                  <div id="comp2" style="width: 132px;height: 132px;"></div>
+                </div>
+                <div class="analyze1-comp">
+                  <div id="comp3" style="width: 132px;height: 132px;"></div>
+                  <ul class="comp3">
+                    <li class="comp3-1">
+                      <span>合格产品</span>
+                      <i>95%</i>
+                    </li>
+                    <li class="comp3-2">
+                      <span>淘汰产品</span>
+                      <i>3%</i>
+                    </li>
+                    <li class="comp3-3">
+                      <span>未完成产品</span>
+                      <i>2%</i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ctx ctx1-4">
+              <div class="analyze analyze2">
+                <div class="analyze2-count">
+                  <ul>
+                    <li>
+                      <span class="icon-time2"></span>
+                      <span class="name">运行时间</span>
+                    </li>
+                    <li>
+                      <span class="icon-time5"></span>
+                      <span class="name">维护时间</span>
+                    </li>
+                    <li>
+                      <span class="icon-time3"></span>
+                      <span class="name">停机时间</span>
+                    </li>
+                    <li>
+                      <span class="icon-time4"></span>
+                      <span class="name">报警时间</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="analyze2-line">
+                  <div id="line" style="width: 670px;height: 132px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-body-bot">
+          <div class="box-title">
+            <h3>工位能源损耗比</h3>
+          </div>
+          <div class="box-body clearfix">
+            <div class="ctx ctx2-1">
+              <div id="bar" style="width: 360px;height: 190px;"></div>
+              <ul class="bar-type">
+                <li>
+                  <i style="background: #0362a7;"></i>
+                  <span>等待时间</span>
+                </li>
+                <li>
+                  <i style="background: #f16548;"></i>
+                  <span>故障时间</span>
+                </li>
+                <li>
+                  <i style="background: #7fb800;"></i>
+                  <span>运行时间</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-body-bot">
+          <div class="box-title">
+            <h3>品质分析</h3>
+            <div class="box-title-more"></div>
+          </div>
+          <div class="box-body clearfix">
+            <div class="ctx ctx3-1">
+              <div id="line2" style="width: 360px;height: 190px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap-body-col clearfix">
+        <div class="wrap-body-top2">
+          <div class="live-logo clearfix">
+            <div class="live-logo1">
+              <img src="./img/logo2.png" alt="">
+            </div>
+            <div class="live-logo2">
+              <img src="./img/logo_small.png" alt="">
+              <span>携手欧姆龙 革新制造现场</span>
+            </div>
+          </div>
+          <div class="live-ctx">
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_njcnc_off.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_njcnc_on.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_robot_off.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_robot_on.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_machine_off.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_machine_on.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_aic_off.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_aic_on.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_anyfeeder_off.png">
+            </div>
+            <div class="live-ctx-bg">
+              <img src="./img/equipment_anyfeeder_on.png">
+            </div>
+            <div class="live-ctx-num live-ctx-num1 live-ctx-num-cur">
+              <span>1</span>
+            </div>
+            <div class="live-ctx-num live-ctx-num2">
+              <span>2</span>
+            </div>
+            <div class="live-ctx-num live-ctx-num3">
+              <span>3</span>
+            </div>
+            <div class="live-ctx-num live-ctx-num4">
+              <span>4</span>
+            </div>
+            <div class="live-ctx-num live-ctx-num5">
+              <span>5</span>
+            </div>
+            <div class="live-ctx-info live-ctx-info1">
+              <div class="live-ctx-info-line"></div>
+              <div class="live-ctx-info-text">
+                <p class="p1">
+                  <span>98</span>%</p>
+                <p class="p2">NJ CNC稼动率</p>
+                <div class="chart"></div>
+              </div>
+            </div>
+            <div class="live-ctx-info live-ctx-info2 live-ctx-info-cur">
+              <div class="live-ctx-info-line"></div>
+              <div class="live-ctx-info-text">
+                <p class="p1">
+                  <span>98</span>%</p>
+                <p class="p2">机器人系统稼动率</p>
+                <div class="chart"></div>
+              </div>
+            </div>
+            <div class="live-ctx-info live-ctx-info3 live-ctx-info-err live-ctx-info-cur">
+              <div class="live-ctx-info-line"></div>
+              <div class="live-ctx-info-text">
+                <p class="p1">
+                  <span>98</span>%</p>
+                <p class="p2">叠片机稼动率</p>
+                <p class="p3">故障信息:
+                  <br>123456789</p>
+                <div class="chart chart-lottie" id="lottie"></div>
+              </div>
+            </div>
+            <div class="live-ctx-info live-ctx-info4">
+              <div class="live-ctx-info-line"></div>
+              <div class="live-ctx-info-text">
+                <p class="p1">
+                  <span>98</span>%</p>
+                <p class="p2">AIC智能产线稼动率</p>
+                <div class="chart"></div>
+              </div>
+            </div>
+            <div class="live-ctx-info live-ctx-info5">
+              <div class="live-ctx-info-line"></div>
+              <div class="live-ctx-info-text">
+                <p class="p1">
+                  <span>98</span>%</p>
+                <p class="p2">Anyfeeder稼动率</p>
+                <div class="chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="live-tab">
+            <h4>展台产线设备</h4>
+            <ul>
+              <li>
+                <i>1</i>
+                <span>NJ CNC</span>
+              </li>
+              <li class="cur">
+                <i>2</i>
+                <span>机器人系统</span>
+              </li>
+              <li>
+                <i>3</i>
+                <span>叠片机</span>
+              </li>
+              <li>
+                <i>4</i>
+                <span>AIC智能产线</span>
+              </li>
+              <li>
+                <i>5</i>
+                <span>Anyfeeder</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="wrap-body-bot2">
+          <div class="box-title">
+            <h3>产品信息一览表</h3>
+            <div class="box-title-more"></div>
+          </div>
+          <div class="box-body clearfix">
+            <div class="ctx ctx4-1">
+              <div class="ctx-table">
+                <div class="ctx-table-head clearfix">
+                  <div class="ctx-table-head-item">NO</div>
+                  <div class="ctx-table-head-item">加工数量</div>
+                  <div class="ctx-table-head-item">良品数量</div>
+                  <div class="ctx-table-head-item">不良品数量</div>
+                </div>
+                <div class="ctx-table-body clearfix">
+                  <ul>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ctx ctx4-2">
+              <div class="ctx-table">
+                <div class="ctx-table-head clearfix">
+                  <div class="ctx-table-head-item">FRID</div>
+                  <div class="ctx-table-head-item">良品</div>
+                  <div class="ctx-table-head-item">不良品</div>
+                </div>
+                <div class="ctx-table-body clearfix">
+                  <ul>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
