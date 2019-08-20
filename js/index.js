@@ -36,9 +36,10 @@ $(function () {
         x: 'center',
         y: 'center',
         textStyle: {
-          fontSize: 12,
-          fontWeight: 'normal',
-          color: '#121212'
+          fontSize: 11,
+          fontWeight: 'bold',
+          color: '#121212',
+          fontFamily: 'Siyuan'
         }
       },
       grid: {
@@ -123,9 +124,10 @@ $(function () {
         x: 'center',
         y: 'center',
         textStyle: {
-          fontSize: 12,
-          fontWeight: 'normal',
-          color: '#121212'
+          fontSize: 11,
+          fontWeight: 'bold',
+          color: '#121212',
+          fontFamily: 'Siyuan'
         }
       },
       grid: {
@@ -210,15 +212,15 @@ $(function () {
           data: [
             {
               value: 95,
-              itemStyle: { color: '#7fb800', borderWidth: 1, borderColor: '#ddd' }
+              itemStyle: { color: '#7fb800', borderWidth: 1, borderColor: '#fff' }
             },
             {
               value: 3,
-              itemStyle: { color: '#feba14', borderWidth: 1, borderColor: '#ddd' }
+              itemStyle: { color: '#feba14', borderWidth: 1, borderColor: '#fff' }
             },
             {
               value: 2,
-              itemStyle: { color: '#f16548', borderWidth: 1, borderColor: '#ddd' }
+              itemStyle: { color: '#f16548', borderWidth: 1, borderColor: '#fff' }
             }
           ],
           label: {
@@ -253,14 +255,13 @@ $(function () {
         },
         axisLine: {
           lineStyle: {
-            color: '#e0e1e2',
+            color: '#818487',
             type: 'dashed'
           }
         },
         splitLine: {
           lineStyle: {
-            width: 2,
-            color: '#e0e1e2'
+            color: '#818487'
           }
         }
       },
@@ -277,13 +278,12 @@ $(function () {
         },
         axisLine: {
           lineStyle: {
-            width: 2,
-            color: '#e0e1e2'
+            color: '#818487'
           }
         },
         splitLine: {
           lineStyle: {
-            color: '#e0e1e2',
+            color: '#818487',
             type: 'dashed'
           }
         }
@@ -408,6 +408,24 @@ $(function () {
         bottom: 20,
         top: 40
       },
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: 'rgba(255, 255, 255, .8)',
+        textStyle: {
+          color: '#171717',
+          fontSize: 10
+        },
+        formatter: function (param) {
+          var name = param[0].name;
+          console.log(param);
+          return [
+            '<span style="display:inline-block;text-align: left;color: #999;width:100%;">' + name + '</span>',
+            '<span style="display:inline-block;margin:-2px 5px 0 0;border-radius:10px;width:6px;height:6px;background-color:#0362a7;"></span>' + param[0].data.text,
+            '<span style="display:inline-block;margin:-2px 5px 0 0;border-radius:6px;width:6px;height:6px;background-color:#f16548;"></span>' + param[1].data.text,
+            '<span style="display:inline-block;margin:-2px 5px 0 0;border-radius:6px;width:6px;height:6px;background-color:#7fb800;"></span>' + param[2].data.text
+          ].join('<br>')
+        }
+      },
       xAxis: [
         {
           type: 'category',
@@ -451,19 +469,19 @@ $(function () {
         {
           type: 'bar',
           stack: '排名',
-          data: [20, 32, 11, 34, 40, 20],
+          data: [{ value: 20, text: '00:08:20' }, { value: 13, text: '00:11:20' }, { value: 33, text: '00:22:20' }, { value: 32, text: '00:33:20' }, { value: 23, text: '00:22:20' }, { value: 12, text: '00:33:20' }],
           barWidth: 8
         },
         {
           type: 'bar',
           stack: '排名',
-          data: [20, 32, 11, 14, 40, 20],
+          data: [{ value: 22, text: '00:11:20' }, { value: 11, text: '00:08:33' }, { value: 22, text: '00:22:20' }, { value: 22, text: '00:08:23' }, { value: 33, text: '00:33:20' }, { value: 11, text: '00:08:20' }],
           barWidth: 8
         },
         {
           type: 'bar',
           stack: '排名',
-          data: [20, 32, 21, 34, 10, 60],
+          data: [{ value: 11, text: '00:29:44' }, { value: 11, text: '00:29:44' }, { value: 11, text: '00:29:44' }, { value: 44, text: '00:29:44' }, { value: 22, text: '00:29:44' }, { value: 33, text: '00:29:44' }],
           barWidth: 8,
           itemStyle: {
             normal: {
@@ -541,7 +559,7 @@ $(function () {
               // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -553,7 +571,7 @@ $(function () {
               // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -565,7 +583,7 @@ $(function () {
               // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -577,7 +595,7 @@ $(function () {
               // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -589,7 +607,7 @@ $(function () {
               // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -661,14 +679,14 @@ $(function () {
               // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
           ],
           type: 'line',
           symbol: 'circle',
-          symbolSize: 4,
+          symbolSize: 6,
           hoverAnimation: false,
           lineStyle: {
             color: {
@@ -709,17 +727,27 @@ $(function () {
   })();
 
   // 现场
+  var liveNow = 0, liveTimer = {};
   function showLive(index) {
+    clearTimeout(liveTimer);
     $('.live-tab li').removeClass('cur').eq(index).addClass('cur');
     $('.live-ctx-bg').hide().eq(index * 2).show();
     $('.live-ctx-bg').eq(index * 2 + 1).show();
     $('.live-ctx-num').removeClass('live-ctx-num-cur').eq(index).addClass('live-ctx-num-cur');
     $('.live-ctx-info').removeClass('live-ctx-info-cur').eq(index).addClass('live-ctx-info-cur');
+    liveTimer = setTimeout(function () {
+      liveNow = ++index % 5;
+      showLive(liveNow);
+    }, 6000);
   }
-  showLive(0);
+  showLive(liveNow);
   $('.live-tab li').click(function () {
-    var index = $(this).index();
-    showLive(index);
+    liveNow = $(this).index();
+    showLive(liveNow);
+  });
+  $('.live-ctx-num').click(function () {
+    liveNow = $(this).index('.live-ctx-num');
+    showLive(liveNow);
   });
   lottie.loadAnimation({
     container: document.getElementById('lottie'),
@@ -728,5 +756,4 @@ $(function () {
     autoplay: true,
     path: 'js/data.json'
   });
-
 });

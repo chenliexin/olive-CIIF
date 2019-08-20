@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> svg </title>
+  <script src="./js/lottie.min.js"></script>
+</head>
+
+<body>
+  <div id="svg" style="width: 200px; height: 200px;"></div>
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('svg'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'js/data.json'
+    });
+  </script>
+</body>
+
+</html>

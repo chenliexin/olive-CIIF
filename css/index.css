@@ -296,22 +296,27 @@ img {
   width: 80px;
   height: 80px;
   background: url(../img/pointer.png) center top no-repeat;
+  background-size: 17px;
 }
 
 .gauge1 {
-  background: url(../img/gauge1.png);
+  background: url(../img/dashboard1.png) center no-repeat;
+  background-size: 130px;
 }
 
 .gauge2 {
-  background: url(../img/gauge2.png);
+  background: url(../img/dashboard2.png) center no-repeat;
+  background-size: 130px;
 }
 
 .gauge3 {
-  background: url(../img/gauge3.png);
+  background: url(../img/dashboard3.png) center no-repeat;
+  background-size: 130px;
 }
 
 .gauge4 {
-  background: url(../img/gauge4.png);
+  background: url(../img/dashboard1.png) center no-repeat;
+  background-size: 130px;
 }
 
 
@@ -467,7 +472,8 @@ img {
   vertical-align: top;
   width: 20px;
   height: 20px;
-  background: url(../img/icon_time_green.png) 0 center no-repeat;
+  background: url(../img/icon-time1.png) 0 0 no-repeat;
+  background-size: 19px;
 }
 
 .icon-time2 {
@@ -475,7 +481,8 @@ img {
   vertical-align: top;
   width: 20px;
   height: 20px;
-  background: url(../img/icon_time_blue.png) 0 center no-repeat;
+  background: url(../img/icon-time2.png) 0 0 no-repeat;
+  background-size: 19px;
 }
 
 .icon-time3 {
@@ -483,7 +490,8 @@ img {
   vertical-align: top;
   width: 20px;
   height: 20px;
-  background: url(../img/icon_time_purple.png) 0 center no-repeat;
+  background: url(../img/icon-time3.png) 0 0 no-repeat;
+  background-size: 19px;
 }
 
 .icon-time4 {
@@ -491,7 +499,8 @@ img {
   vertical-align: top;
   width: 20px;
   height: 20px;
-  background: url(../img/icon_time_orange.png) 0 center no-repeat;
+  background: url(../img/icon-time4.png) 0 0 no-repeat;
+  background-size: 19px;
 }
 
 .icon-time5 {
@@ -499,7 +508,8 @@ img {
   vertical-align: top;
   width: 20px;
   height: 20px;
-  background: url(../img/icon_time_red.png) 0 center no-repeat;
+  background: url(../img/icon-time5.png) 0 0 no-repeat;
+  background-size: 19px;
 }
 
 .analyze1-comp {
@@ -637,6 +647,7 @@ img {
   z-index: 1;
   background: url(../img/tips_number2.png) -7px -4px no-repeat;
   background-size: 100px;
+  cursor: pointer;
 }
 
 .live-ctx-num span {
@@ -896,7 +907,7 @@ img {
 .ctx-table {}
 
 .ctx-table-head {
-  line-height: 38px;
+  line-height: 37px;
 }
 
 .ctx-table-body ul {
