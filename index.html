@@ -9,6 +9,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/echarts.min.js"></script>
   <script src="./js/lottie.min.js"></script>
+  <script src="./js/iscroll.js"></script>
   <script src="./js/index.js"></script>
 </head>
 
@@ -107,9 +108,13 @@
                 </div>
                 <div class="analyze1-comp">
                   <div id="comp1" style="width: 132px;height: 132px;"></div>
+                  <div class="analyze1-comp-tit">时间稼动率
+                    <br>组成</div>
                 </div>
                 <div class="analyze1-comp">
                   <div id="comp2" style="width: 132px;height: 132px;"></div>
+                  <div class="analyze1-comp-tit">性能稼动率
+                    <br>组成</div>
                 </div>
                 <div class="analyze1-comp">
                   <div id="comp3" style="width: 132px;height: 132px;"></div>
@@ -258,7 +263,9 @@
                 <p class="p1">
                   <span>98</span>%</p>
                 <p class="p2">NJ CNC稼动率</p>
-                <div class="chart"></div>
+                <div class="chart">
+                  <div data-value="90" class="chart-body"></div>
+                </div>
               </div>
             </div>
             <div class="live-ctx-info live-ctx-info2 live-ctx-info-cur">
@@ -267,7 +274,9 @@
                 <p class="p1">
                   <span>98</span>%</p>
                 <p class="p2">机器人系统稼动率</p>
-                <div class="chart"></div>
+                <div class="chart">
+                  <div data-value="90" class="chart-body"></div>
+                </div>
               </div>
             </div>
             <div class="live-ctx-info live-ctx-info3 live-ctx-info-err live-ctx-info-cur">
@@ -278,7 +287,10 @@
                 <p class="p2">叠片机稼动率</p>
                 <p class="p3">故障信息:
                   <br>123456789</p>
-                <div class="chart chart-lottie" id="lottie"></div>
+                <div class="chart">
+                  <div data-value="90" class="chart-body chart-body-err"></div>
+                  <div id="lottie" class="chart-svg"></div>
+                </div>
               </div>
             </div>
             <div class="live-ctx-info live-ctx-info4">
@@ -287,7 +299,9 @@
                 <p class="p1">
                   <span>98</span>%</p>
                 <p class="p2">AIC智能产线稼动率</p>
-                <div class="chart"></div>
+                <div class="chart">
+                  <div data-value="90" class="chart-body"></div>
+                </div>
               </div>
             </div>
             <div class="live-ctx-info live-ctx-info5">
@@ -296,7 +310,9 @@
                 <p class="p1">
                   <span>98</span>%</p>
                 <p class="p2">Anyfeeder稼动率</p>
-                <div class="chart"></div>
+                <div class="chart">
+                  <div data-value="90" class="chart-body"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -340,8 +356,20 @@
                   <div class="ctx-table-head-item">良品数量</div>
                   <div class="ctx-table-head-item">不良品数量</div>
                 </div>
-                <div class="ctx-table-body clearfix">
+                <div id="scroll1" class="ctx-table-body clearfix">
                   <ul>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">1</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
                     <li class="clearfix">
                       <div class="ctx-table-body-item">1</div>
                       <div class="ctx-table-body-item">300</div>
@@ -395,8 +423,13 @@
                   <div class="ctx-table-head-item">良品</div>
                   <div class="ctx-table-head-item">不良品</div>
                 </div>
-                <div class="ctx-table-body clearfix">
+                <div id="scroll2" class="ctx-table-body clearfix">
                   <ul>
+                    <li class="clearfix">
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item">300</div>
+                      <div class="ctx-table-body-item .color-red">300</div>
+                    </li>
                     <li class="clearfix">
                       <div class="ctx-table-body-item">300</div>
                       <div class="ctx-table-body-item">300</div>

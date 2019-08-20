@@ -521,6 +521,16 @@ img {
   position: relative;
 }
 
+.analyze1-comp-tit {
+  position: absolute;
+  left: 0;
+  line-height: 1.25;
+  top: 54px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+}
+
 .live-logo {
   position: absolute;
   width: 100%;
@@ -814,9 +824,9 @@ img {
   top: 136px;
 }
 
-.live-ctx-info-cur .live-ctx-info-text {
+/* .live-ctx-info-cur .live-ctx-info-text {
   color: #058bd7;
-}
+} */
 
 .live-ctx-info-cur.live-ctx-info1 .live-ctx-info-line {
   background-image: url(../img/line1_pre.png);
@@ -868,18 +878,38 @@ img {
   height: 43px;
   left: -55px;
   top: 0;
-  background: url(../img/gauge-simple.png) center no-repeat;
-  background-size: contain;
+  /* background: url(../img/gauge-simple.png) center no-repeat; */
+  /* background-size: contain; */
+}
+
+.live-ctx-info .chart-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.live-ctx-info .chart-svg {
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  left: -15%;
+  top: -15%;
 }
 
 .live-ctx-info.live-ctx-info-cur .chart {
-  opacity: .75;
+  /* opacity: .75; */
   width: 64px;
   height: 64px;
   left: -72px;
-  border-radius: 50%;
-  overflow: hidden;
+  /* border-radius: 50%;
+  overflow: hidden; */
   top: -10px
+}
+
+.live-ctx-info-err.live-ctx-info-cur .chart {
+  left: -84px;
 }
 
 .live-ctx-info1.live-ctx-info-cur .chart {
@@ -908,11 +938,14 @@ img {
 
 .ctx-table-head {
   line-height: 37px;
+  background: #fff;
+  position: relative;
+  z-index: 1;
 }
 
-.ctx-table-body ul {
-  overflow: auto;
+.ctx-table-body {
   height: 173px;
+  position: relative;
 }
 
 .ctx-table-body li {

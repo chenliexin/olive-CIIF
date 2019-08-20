@@ -31,17 +31,6 @@ $(function () {
   (function () {
     let chart = echarts.init(document.getElementById('comp1'));
     let option = {
-      title: {
-        text: '时间稼动率\n组成',
-        x: 'center',
-        y: 'center',
-        textStyle: {
-          fontSize: 11,
-          fontWeight: 'bold',
-          color: '#121212',
-          fontFamily: 'Siyuan'
-        }
-      },
       grid: {
         bottom: 0,
         top: 0,
@@ -119,17 +108,6 @@ $(function () {
   (function () {
     let chart = echarts.init(document.getElementById('comp2'));
     let option = {
-      title: {
-        text: '性能稼动率\n组成',
-        x: 'center',
-        y: 'center',
-        textStyle: {
-          fontSize: 11,
-          fontWeight: 'bold',
-          color: '#121212',
-          fontFamily: 'Siyuan'
-        }
-      },
       grid: {
         bottom: 0,
         top: 0,
@@ -727,6 +705,57 @@ $(function () {
   })();
 
   // 现场
+  let chartList = [];
+  $('.live-ctx-info .chart-body').each(function (i, $el) {
+    let isErr = $(this).is('.chart-body-err');
+    let value = +$(this).data('value');
+    let chart = echarts.init($el);
+    let option = {
+      animation: false,
+      grid: {
+        bottom: 0,
+        top: 0,
+        left: 0,
+        right: 0
+      },
+      series: [
+        {
+          radius: ['95%', '100%'],
+          type: 'pie',
+          data: [
+            {
+              value: 100,
+              itemStyle: { color: isErr ? '#f16548' : '#0362a7' }
+            }
+          ],
+          label: {
+            show: false
+          },
+          silent: true
+        },
+        {
+          radius: ['85%', '95%'],
+          type: 'pie',
+          data: [
+            {
+              value: 100 - value,
+              itemStyle: { color: '#f2f2f3' }
+            },
+            {
+              value: value,
+              itemStyle: { color: isErr ? '#f16548' : '#0362a7' }
+            }
+          ],
+          label: {
+            show: false
+          },
+          silent: true
+        }
+      ]
+    };
+    chart.setOption(option);
+    chartList.push(chart);
+  });
   var liveNow = 0, liveTimer = {};
   function showLive(index) {
     clearTimeout(liveTimer);
@@ -735,6 +764,10 @@ $(function () {
     $('.live-ctx-bg').eq(index * 2 + 1).show();
     $('.live-ctx-num').removeClass('live-ctx-num-cur').eq(index).addClass('live-ctx-num-cur');
     $('.live-ctx-info').removeClass('live-ctx-info-cur').eq(index).addClass('live-ctx-info-cur');
+    for (let i = 0; i < chartList.length; i++) {
+      const item = chartList[i];
+      item.resize();
+    }
     liveTimer = setTimeout(function () {
       liveNow = ++index % 5;
       showLive(liveNow);
@@ -754,6 +787,16 @@ $(function () {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'js/data.json'
+    path: 'js/data1.json'
+  });
+
+  // 滚动
+  var scroll1 = new IScroll('#scroll1', {
+    mouseWheel: true,
+    scrollbars: true
+  });
+  var scroll2 = new IScroll('#scroll2', {
+    mouseWheel: true,
+    scrollbars: true
   });
 });
