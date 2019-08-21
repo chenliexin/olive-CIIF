@@ -766,6 +766,13 @@ $(function () {
     $('.live-ctx-info').removeClass('live-ctx-info-cur').eq(index).addClass('live-ctx-info-cur');
     for (let i = 0; i < chartList.length; i++) {
       const item = chartList[i];
+      let isErr = $('.live-ctx-info .chart-body').eq(i).is('.chart-body-err');
+      if (!isErr) {
+        var option = item.getOption();
+        option.series[0].data[0].itemStyle.color = i == index ? '#058BD7' : '#0362a7';
+        option.series[1].data[1].itemStyle.color = i == index ? '#058BD7' : '#0362a7';
+        item.setOption(option);
+      }
       item.resize();
     }
     liveTimer = setTimeout(function () {

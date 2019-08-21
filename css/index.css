@@ -824,9 +824,9 @@ img {
   top: 136px;
 }
 
-/* .live-ctx-info-cur .live-ctx-info-text {
-  color: #058bd7;
-} */
+.live-ctx-info-cur .live-ctx-info-text {
+  color: #058BD7;
+}
 
 .live-ctx-info-cur.live-ctx-info1 .live-ctx-info-line {
   background-image: url(../img/line1_pre.png);
