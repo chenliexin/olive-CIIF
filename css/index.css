@@ -211,6 +211,12 @@ img {
   font-weight: normal;
 }
 
+.box-title h3 span {
+  font-size: 14px;
+  margin-left: 5px;
+  ;
+}
+
 .box-title-more {
   position: absolute;
   top: 24px;
@@ -922,7 +928,7 @@ img {
 
 .ctx4-1 {
   height: 210px;
-  width: 460px;
+  width: 846px;
   text-align: center;
 }
 
@@ -965,14 +971,20 @@ img {
 .ctx4-1 .ctx-table-head-item,
 .ctx4-1 .ctx-table-body-item {
   float: left;
-  width: 27%
+  width: 12%
 }
 
 
-.ctx4-1 .ctx-table-head-item:nth-child(4n+1),
-.ctx4-1 .ctx-table-body-item:nth-child(4n+1) {
+.ctx4-1 .ctx-table-head-item:nth-child(7n+2),
+.ctx4-1 .ctx-table-body-item:nth-child(7n+2) {
   float: left;
-  width: 19%
+  width: 20%
+}
+
+.ctx4-1 .ctx-table-head-item:nth-child(7n+6),
+.ctx4-1 .ctx-table-body-item:nth-child(7n+6) {
+  float: left;
+  width: 20%
 }
 
 
@@ -980,4 +992,31 @@ img {
 .ctx4-2 .ctx-table-body-item {
   float: left;
   width: 33.33%
+}
+
+.warn-list {
+  position: absolute;
+  left: 40px;
+  right: 32px;
+
+  font-size: 12px;
+  color: #f16548;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #f6f7f8;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  top: 12px;
+  line-height: 24px;
+  height: 24px;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.color-red {
+  color: #f16548;
+}
+
+.color-blue {
+  color: #0362a7;
 }

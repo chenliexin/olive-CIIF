@@ -480,9 +480,10 @@ $(function () {
         left: 40,
         right: 20,
         bottom: 20,
-        top: 40
+        top: 50
       },
       xAxis: {
+        splitNumber: 16,
         type: 'time',
         axisLabel: {
           fontSize: 10,
@@ -505,7 +506,7 @@ $(function () {
       },
       yAxis: {
         type: 'value',
-        max: 8,
+        max: 10,
         min: 0,
         minInterval: 2,
         axisTick: {
@@ -532,9 +533,8 @@ $(function () {
             {
               value: [
                 new Date(2019, 1, 1, 8, 0, 0),
-                1
+                5
               ],
-              // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
                 shadowColor: 'rgba(3, 98, 167, 1)',
@@ -544,9 +544,8 @@ $(function () {
             {
               value: [
                 new Date(2019, 1, 1, 9, 0, 0),
-                2
+                3
               ],
-              // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
                 shadowColor: 'rgba(3, 98, 167, 1)',
@@ -556,9 +555,8 @@ $(function () {
             {
               value: [
                 new Date(2019, 1, 1, 10, 0, 0),
-                3
+                2
               ],
-              // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
                 shadowColor: 'rgba(3, 98, 167, 1)',
@@ -568,12 +566,12 @@ $(function () {
             {
               value: [
                 new Date(2019, 1, 1, 11, 0, 0),
-                3
+                0.5
               ],
-              // 小于等于4的颜色
+              // 橙色
               itemStyle: {
-                color: 'rgba(3, 98, 167, 0.8)',
-                shadowColor: 'rgba(3, 98, 167, 1)',
+                color: 'rgba(255, 74, 50, .6)',
+                shadowColor: 'rgba(255, 74, 50, .6)',
                 shadowBlur: 10
               }
             },
@@ -582,7 +580,6 @@ $(function () {
                 new Date(2019, 1, 1, 12, 0, 0),
                 4
               ],
-              // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
                 shadowColor: 'rgba(3, 98, 167, 1)',
@@ -594,10 +591,9 @@ $(function () {
                 new Date(2019, 1, 1, 13, 0, 0),
                 5
               ],
-              // 大于4的颜色
               itemStyle: {
-                color: 'rgba(255, 74, 50, .6)',
-                shadowColor: 'rgba(255, 74, 50, .6)',
+                color: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -606,19 +602,18 @@ $(function () {
                 new Date(2019, 1, 1, 14, 0, 0),
                 7.5
               ],
-              // 大于4的颜色
               itemStyle: {
-                color: 'rgba(255, 74, 50, .6)',
-                shadowColor: 'rgba(255, 74, 50, .6)',
+                color: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
             {
               value: [
                 new Date(2019, 1, 1, 15, 0, 0),
-                7
+                9.5
               ],
-              // 大于4的颜色
+              // 橙色
               itemStyle: {
                 color: 'rgba(255, 74, 50, .6)',
                 shadowColor: 'rgba(255, 74, 50, .6)',
@@ -630,10 +625,9 @@ $(function () {
                 new Date(2019, 1, 1, 16, 0, 0),
                 6
               ],
-              // 大于4的颜色
               itemStyle: {
-                color: 'rgba(255, 74, 50, .6)',
-                shadowColor: 'rgba(255, 74, 50, .6)',
+                color: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -642,10 +636,9 @@ $(function () {
                 new Date(2019, 1, 1, 17, 0, 0),
                 5
               ],
-              // 大于4的颜色
               itemStyle: {
-                color: 'rgba(255, 74, 50, .6)',
-                shadowColor: 'rgba(255, 74, 50, .6)',
+                color: 'rgba(3, 98, 167, 0.8)',
+                shadowColor: 'rgba(3, 98, 167, 1)',
                 shadowBlur: 10
               }
             },
@@ -654,7 +647,6 @@ $(function () {
                 new Date(2019, 1, 1, 18, 0, 0),
                 4
               ],
-              // 小于等于4的颜色
               itemStyle: {
                 color: 'rgba(3, 98, 167, 0.8)',
                 shadowColor: 'rgba(3, 98, 167, 1)',
@@ -676,7 +668,11 @@ $(function () {
               colorStops: [{
                 offset: 0, color: 'rgba(255, 74, 50, .6)'
               }, {
-                offset: 1, color: 'rgba(3, 98, 167, 0.6)'
+                offset: .2, color: 'rgba(3, 98, 167, .6)'
+              }, {
+                offset: .8, color: 'rgba(3, 98, 167, .6)'
+              }, {
+                offset: 1, color: 'rgba(255, 74, 50, .6)'
               }],
               global: false
             },
@@ -697,6 +693,24 @@ $(function () {
               }],
               global: false
             }
+          },
+          markLine: {
+            silent: true,
+            symbol: 'none',
+            label: {
+              show: false
+            },
+            data: [{
+              yAxis: 9,
+              lineStyle: {
+                color: "#f16548"
+              }
+            }, {
+              yAxis: 1,
+              lineStyle: {
+                color: "#f16548"
+              }
+            }]
           }
         }
       ]
@@ -802,8 +816,26 @@ $(function () {
     mouseWheel: true,
     scrollbars: true
   });
-  var scroll2 = new IScroll('#scroll2', {
-    mouseWheel: true,
-    scrollbars: true
+  // var scroll2 = new IScroll('#scroll2', {
+  //   mouseWheel: true,
+  //   scrollbars: true
+  // });
+
+  // 警告
+  var warnIndex = 0;
+  var warnSize = $('.warn-list ul li').length;
+  $('.warn-list ul').html(function () {
+    return $(this).html() + $(this).html();
   });
+  setInterval(function () {
+    ++warnIndex;
+    $('.warn-list ul').animate({
+      marginTop: -24 * warnIndex
+    }, function () {
+      if (warnIndex == warnSize) {
+        $('.warn-list ul').css({ marginTop: 0 });
+        warnIndex = 0;
+      }
+    });
+  }, 2000);
 });

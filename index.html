@@ -190,12 +190,20 @@
         </div>
         <div class="wrap-body-bot">
           <div class="box-title">
-            <h3>品质分析</h3>
+            <h3>品质分析
+              <span>电流特性</span>
+            </h3>
             <div class="box-title-more"></div>
           </div>
           <div class="box-body clearfix">
             <div class="ctx ctx3-1">
               <div id="line2" style="width: 360px;height: 190px;"></div>
+              <div class="warn-list">
+                <ul>
+                  <li>11:00:00 电流超过下限</li>
+                  <li>15:00:00 电流超过上限</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -351,119 +359,87 @@
             <div class="ctx ctx4-1">
               <div class="ctx-table">
                 <div class="ctx-table-head clearfix">
-                  <div class="ctx-table-head-item">NO</div>
-                  <div class="ctx-table-head-item">加工数量</div>
-                  <div class="ctx-table-head-item">良品数量</div>
-                  <div class="ctx-table-head-item">不良品数量</div>
+                  <div class="ctx-table-head-item">RFID</div>
+                  <div class="ctx-table-head-item">开始时间</div>
+                  <div class="ctx-table-head-item">扭矩</div>
+                  <div class="ctx-table-head-item">位置</div>
+                  <div class="ctx-table-head-item">喷码编号</div>
+                  <div class="ctx-table-head-item">完成时间</div>
+                  <div class="ctx-table-head-item">良品</div>
                 </div>
                 <div id="scroll1" class="ctx-table-body clearfix">
                   <ul>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-red">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-blue">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-blue">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-blue">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-blue">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-red">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-red">300</div>
                     </li>
                     <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">1</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="ctx ctx4-2">
-              <div class="ctx-table">
-                <div class="ctx-table-head clearfix">
-                  <div class="ctx-table-head-item">FRID</div>
-                  <div class="ctx-table-head-item">良品</div>
-                  <div class="ctx-table-head-item">不良品</div>
-                </div>
-                <div id="scroll2" class="ctx-table-body clearfix">
-                  <ul>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item">300</div>
-                      <div class="ctx-table-body-item .color-red">300</div>
+                      <div class="ctx-table-body-item">01012</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item">180</div>
+                      <div class="ctx-table-body-item">20</div>
+                      <div class="ctx-table-body-item">T12345678</div>
+                      <div class="ctx-table-body-item">2019/07/07 08:22:22</div>
+                      <div class="ctx-table-body-item color-red">300</div>
                     </li>
                   </ul>
                 </div>
